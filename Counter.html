@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Counter</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+    }
+  </style>
+  <script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+      let counterValue = 0;
+      const counterDisplay = document.getElementById("counter");
+
+      function updateCounter() {
+        counterDisplay.textContent = counterValue;
+      }
+
+      function handleAction(action) {
+        switch (action) {
+          case "increment":
+            counterValue++;
+            break;
+          case "decrement":
+            counterValue--;
+            break;
+          case "reset":
+            counterValue = 0;
+            break;
+          default:
+            console.log("Unknown action:", action);
+        }
+        updateCounter();
+      }
+
+      document.getElementById("increment").addEventListener("click", () => handleAction("increment"));
+      document.getElementById("decrement").addEventListener("click", () => handleAction("decrement"));
+      document.getElementById("reset").addEventListener("click", () => handleAction("reset"));
+
+      updateCounter();
+    });
+  </script>
+</head>
+
+<body class="bg-gray-100">
+  <div class="flex flex-col items-center gap-5">
+    <div class="flex items-center gap-5 mb-4">
+      <button id="increment" class="bg-blue-400 p-2 rounded-md text-sm text-white font-bold uppercase hover:bg-blue-500 transition-all">Increment</button>
+      <button id="reset" class="bg-green-400 p-2 rounded-md text-sm text-white font-bold uppercase hover:bg-green-500 transition-all">Reset</button>
+      <button id="decrement" class="bg-red-400 p-2 rounded-md text-sm text-white font-bold uppercase hover:bg-red-500 transition-all">Decrement</button>
+    </div>
+    <span id="counter" class="text-2xl font-bold">0</span>
+  </div>
+</body>
+
+</html>

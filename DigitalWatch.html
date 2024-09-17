@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital Watch</title>
+
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f0f0f0;
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .reloj {
+      font-size: 3rem;
+      font-weight: bold;
+      color: #333;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .container {
+      display: grid;
+      gap: 20px;
+      text-align: center;
+    }
+
+    .container span {
+      font-weight: 600;
+      font-size: 24px;
+      text-transform: uppercase;
+    }
+  </style>
+
+  <script>
+    function actualizarReloj() {
+      const ahora = new Date();
+      const horas = ahora.getHours().toString().padStart(2, "0");
+      const minutos = ahora.getMinutes().toString().padStart(2, "0");
+      const segundos = ahora.getSeconds().toString().padStart(2, "0");
+      const dia = ahora.getDate().toString().padStart(2, "0");
+      const mes = (ahora.getMonth() + 1).toString().padStart(1, "0");
+      const año = ahora.getFullYear();
+      const fechaActual = `${dia}/${mes}/${año}`;
+      const horaActual = `${horas}:${minutos}:${segundos}`;
+      
+      document.getElementById("reloj").textContent = horaActual;
+      document.getElementById("fecha").textContent = `hoy es ${fechaActual}`;
+    }
+
+    setInterval(actualizarReloj, 1000);
+    actualizarReloj(); 
+  </script>
+</head>
+
+<body>
+  <div class="container">
+    <span id="fecha"></span>
+    <div id="reloj" class="reloj"></div>
+  </div>
+</body>
+
+</html>
