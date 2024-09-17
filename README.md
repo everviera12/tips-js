@@ -13,15 +13,6 @@ The goal of this repository is to:
 - Help beginners and intermediate developers understand DOM manipulation and web development concepts.
 - Encourage the community to explore, contribute, and enhance their skills through hands-on examples.
 
-## Projects Included
-
-Each project demonstrates different techniques and concepts, such as:
-
-- **Interactive To-Do List**: Create and manage tasks dynamically.
-- **Digital Clock**: A simple digital clock using `setInterval` for real-time updates.
-- **Quiz Application**: An interactive multiple-choice quiz with instant feedback.
-- And more!
-
 ## How to Use
 
 1. Clone or download this repository.
